@@ -2,7 +2,7 @@ import React from 'react';
 import { Hits } from 'react-instantsearch-dom';
 
 import 'instantsearch.css/themes/algolia.css';
-import './List.css';
+import './Result.css';
 
 const defaultHitComponent = ({ hit: { title, description, path } }) => (
   <article>
@@ -13,6 +13,6 @@ const defaultHitComponent = ({ hit: { title, description, path } }) => (
   </article>
 );
 
-export default ({ hitComponent = defaultHitComponent }) => (
-  <Hits hitComponent={hitComponent} />
+export default ({ hitComponent = defaultHitComponent, ...args }) => (
+  <Hits hitComponent={hitComponent} {...args} />
 );
