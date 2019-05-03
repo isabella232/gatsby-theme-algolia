@@ -19,7 +19,7 @@ yarn add gatsby-theme-algolia -D
 
 ## Guide
 
-This guide assumes you already have an account at [algolia.com](https://www.algolia.com) and have created an index.
+> This guide assumes you already have an account at [algolia](https://www.algolia.com) and have created an index.
 
 ### 🚀  Push your data to Algolia server
 
@@ -43,7 +43,7 @@ GATSBY_ALGOLIA_SEARCH_API_KEY
 GATSBY_ALGOLIA_INDEX_NAME
 ```
 
-You can grab that information from `API Keys` menu at [algolia.com](https://www.algolia.com).
+You can grab that information from `API Keys` menu at [algolia](https://www.algolia.com).
 
 In case of Netlify, you can specify them at `Settings > Build & deploy > Build environment variables`.
 
@@ -56,7 +56,7 @@ GATSBY_ALGOLIA_SEARCH_API_KEY=xxx
 GATSBY_ALGOLIA_INDEX_NAME=xxx
 ```
 
-Since `GATSBY_ALGOLIA_ADMIN_API_KEY` is a secret information, you don't want to expose it to public. Add a line `.env` to your `.gitingore` to avoid commiting it.
+Since `GATSBY_ALGOLIA_ADMIN_API_KEY` is a secret information, you don't want to expose it to public. Add `.env` to your `.gitingore` to avoid commiting it.
 
 #### Push it
 
@@ -91,4 +91,4 @@ Add the components:
 </Wrapper>
 ```
 
-Now it's done!
+That's it. Now you will see the list of your data and the list will be filtered as you type a query on the search box.
