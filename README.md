@@ -131,11 +131,14 @@ You can add things to the `query` or change how `transformer` behaves.
             ({
               node: {
                 excerpt,
-                frontmatter: { title },
+                timeToRead,
+                frontmatter: { title, date },
                 fields: { slug },
               },
             }) => ({
               title,
+              timeToRead,
+              date,
               description: excerpt,
               path: slug,
             })
