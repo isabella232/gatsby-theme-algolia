@@ -99,7 +99,7 @@ That's it. Now you will see the list of your data and the list will be filtered 
 
 You can specify what kind of data to push to Algolia server.
 
-The following is the default query. You can add things to the query or change how `transformer` behaves.
+You can add things to the `query` or change how `transformer` behaves.
 
 ```js
 {
@@ -108,21 +108,23 @@ The following is the default query. You can add things to the query or change ho
     queries: [
       {
         query: `
-        {
-          allMarkdownRemark {
-            edges {
-              node {
-                excerpt
-                frontmatter {
-                  title
-                }
-                fields {
-                  slug
+          {
+            allMarkdownRemark {
+              edges {
+                node {
+                  excerpt
+                  timeToRead
+                  frontmatter {
+                    title
+                    date
+                  }
+                  fields {
+                    slug
+                  }
                 }
               }
             }
           }
-        }
       `,
         transformer: ({ data }) =>
           data.allMarkdownRemark.edges.map(
