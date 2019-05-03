@@ -21,14 +21,14 @@ yarn add gatsby-theme-algolia -D
 
 > This guide assumes you already have an account at [algolia](https://www.algolia.com) and have created an index.
 
-### 🚀  Push your data to Algolia server
+### 🚀 Push your data to Algolia server
 
 #### gatsby-config.js
 
 ```js
 module.exports = {
   // ...
-  __experimentalThemes: ['gatsby-theme-algolia'],
+  __experimentalThemes: [{ resolve: 'gatsby-theme-algolia' }],
 };
 ```
 
@@ -92,3 +92,94 @@ Add the components:
 ```
 
 That's it. Now you will see the list of your data and the list will be filtered as you type a query on the search box.
+
+## Customization
+
+### Specify what to index
+
+You can specify what kind of data to push to Algolia server.
+
+The following is the default query. You can add things to the query and change how `transformer` behaves.
+
+```js
+{
+  resolve: 'gatsby-theme-algolia',
+  options: {
+    queries: [
+      {
+        query: `
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                excerpt
+                frontmatter {
+                  title
+                }
+                fields {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      `,
+        transformer: ({ data }) =>
+          data.allMarkdownRemark.edges.map(
+            ({
+              node: {
+                excerpt,
+                frontmatter: { title },
+                fields: { slug },
+              },
+            }) => ({
+              title,
+              description: excerpt,
+              path: slug,
+            })
+          ),
+      },
+    ],
+  },
+}
+```
+
+### Alter the UI
+
+Of course, you want to alter the default UI.
+
+You can simply put a css file to override the default style.
+
+Or you can pass a custom component to replace the default list item with.
+
+```js
+const hitComponent = ({
+  hit: { title, timeToRead, date, description, path },
+}) => (
+  <article>
+    <h2>
+      <a href={path}>{title}</a>
+    </h2>
+    <p>{description}</p>
+    <p>
+      {date} ∙ {timeToRead}min(s)
+    </p>
+  </article>
+);
+
+...
+
+<Wrapper>
+  <div className="header">
+    <h1>Test Website</h1>
+    <SearchBox />
+  </div>
+  <div className="body">
+    <List hitComponent={hitComponent} />
+  </div>
+</Wrapper>
+```
+
+## Contribution
+
+Any contribution is welcomed. You can file an issue for suggestion or even create a pull request for whatever you want.
