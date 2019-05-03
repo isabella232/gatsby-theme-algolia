@@ -21,7 +21,7 @@ yarn add gatsby-theme-algolia -D
 
 > This guide assumes you already have an account at [algolia](https://www.algolia.com) and have created an index.
 
-### 🚀 Push your data to Algolia server
+### 🚀  Push your data to Algolia server
 
 #### gatsby-config.js
 
@@ -72,7 +72,7 @@ yarn build
 
 Check the dashboard if the data is well stored. At the dashboard, you need to go to `Configuration` and configure `Searchable attributes` properly.
 
-### 🌷 List your data with a search box
+### 🌷  List your data with a search box
 
 Open your index page file(maybe `src/pages/index.js` or `src/components/index.js`).
 
@@ -99,7 +99,7 @@ That's it. Now you will see the list of your data and the list will be filtered 
 
 You can specify what kind of data to push to Algolia server.
 
-The following is the default query. You can add things to the query and change how `transformer` behaves.
+The following is the default query. You can add things to the query or change how `transformer` behaves.
 
 ```js
 {
@@ -152,7 +152,7 @@ You can simply put a css file to override the default style.
 
 Or you can pass a custom component to replace the default list item with.
 
-```js
+```jsx
 const hitComponent = ({
   hit: { title, timeToRead, date, description, path },
 }) => (
