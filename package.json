@@ -2,7 +2,10 @@
   "name": "gatsby-theme-algolia",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "commit": "git-cz",
     "release": "standard-version",
@@ -21,14 +24,7 @@
   "homepage": "https://github.com/algolia/gatsby-theme-algolia#readme",
   "devDependencies": {
     "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "2.1.0",
-    "dotenv": "^8.0.0",
-    "gatsby-plugin-algolia": "^0.3.0"
-  },
-  "dependencies": {
-    "algoliasearch": "^3.32.1",
-    "instantsearch.css": "^7.3.1",
-    "react-instantsearch": "^5.5.0"
+    "cz-conventional-changelog": "2.1.0"
   },
   "config": {
     "commitizen": {
