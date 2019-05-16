@@ -85,10 +85,10 @@ import { SearchWrapper, SearchResult, SearchBox } from 'gatsby-theme-algolia';
 Add the components:
 
 ```jsx
-<Wrapper>
+<SearchWrapper>
   <SearchBox />
-  <List />
-</Wrapper>
+  <SearchResult />
+</SearchWrapper>
 ```
 
 That's it. Now you will see the list of your data and the list will be filtered as you type a query on the search box.
@@ -174,15 +174,15 @@ const hitComponent = ({
 
 ...
 
-<Wrapper>
+<SearchWrapper>
   <div className="header">
     <h1>Test Website</h1>
     <SearchBox />
   </div>
   <div className="body">
-    <List hitComponent={hitComponent} />
+    <SearchResult hitComponent={hitComponent} />
   </div>
-</Wrapper>
+</SearchWrapper>
 ```
 
 ## Contribution

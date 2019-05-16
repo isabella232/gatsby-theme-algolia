@@ -8,6 +8,7 @@ const defaultQueries = [
             excerpt
             frontmatter {
               title
+              date
             }
             fields {
               slug
@@ -22,12 +23,13 @@ const defaultQueries = [
         ({
           node: {
             excerpt,
-            frontmatter: { title },
+            frontmatter: { title, date },
             fields: { slug },
           },
         }) => ({
           title,
           description: excerpt,
+          date,
           path: slug,
         })
       ),
