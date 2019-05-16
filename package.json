@@ -7,6 +7,7 @@
     "packages/*"
   ],
   "scripts": {
+    "dev": "start-storybook -p 6006",
     "commit": "git-cz",
     "release": "standard-version",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,11 +25,18 @@
   "homepage": "https://github.com/algolia/gatsby-theme-algolia#readme",
   "devDependencies": {
     "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "2.1.0"
+    "cz-conventional-changelog": "2.1.0",
+    "@storybook/react": "^5.0.11",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@babel/core": "^7.4.4",
+    "babel-loader": "^8.0.6"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,100 @@
+.ais-SearchBox-input::-ms-clear,
+.ais-SearchBox-input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.ais-SearchBox-input::-webkit-search-decoration,
+.ais-SearchBox-input::-webkit-search-cancel-button,
+.ais-SearchBox-input::-webkit-search-results-button,
+.ais-SearchBox-input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.ais-SearchBox-form {
+  display: block;
+  position: relative;
+}
+
+.ais-SearchBox-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.3rem 1.7rem;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #c4c8d8;
+  border-radius: 5px;
+}
+.ais-SearchBox-input::-webkit-input-placeholder {
+  color: grey;
+}
+.ais-SearchBox-input::-moz-placeholder {
+  color: grey;
+}
+.ais-SearchBox-input:-ms-input-placeholder {
+  color: grey;
+}
+.ais-SearchBox-input:-moz-placeholder {
+  color: grey;
+}
+
+.ais-SearchBox-submit,
+.ais-SearchBox-reset,
+.ais-SearchBox-loadingIndicator {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  right: 0.3rem;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.ais-SearchBox-submit {
+  left: 0.3rem;
+}
+
+.ais-SearchBox-reset {
+  right: 0.3rem;
+}
+
+.ais-SearchBox-submitIcon,
+.ais-SearchBox-resetIcon,
+.ais-SearchBox-loadingIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.ais-SearchBox-submitIcon path,
+.ais-SearchBox-resetIcon path {
+  fill: grey;
+}
+
+.ais-SearchBox-submitIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.ais-SearchBox-resetIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.ais-SearchBox-loadingIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.ais-Highlight-highlighted {
+  background: orange;
+}
