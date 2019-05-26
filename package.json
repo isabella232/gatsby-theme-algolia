@@ -12,6 +12,8 @@
     "dev:blog": "yarn workspace blog develop",
     "commit": "git-cz",
     "release": "standard-version",
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,14 +28,22 @@
   },
   "homepage": "https://github.com/algolia/gatsby-theme-algolia#readme",
   "devDependencies": {
-    "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "2.1.0",
-    "@storybook/react": "^5.0.11",
+    "@babel/core": "^7.4.4",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addons": "^5.0.11",
-    "@babel/core": "^7.4.4",
-    "babel-loader": "^8.0.6"
+    "@storybook/react": "^5.0.11",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "2.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-algolia": "^13.3.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "prettier": "^1.17.1"
   },
   "config": {
     "commitizen": {
