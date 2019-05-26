@@ -1,19 +1,23 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { Hits, Highlight } from 'react-instantsearch-dom';
 
 import './SearchResult.css';
 
 const defaultHitComponent = ({ hit }) => {
-  const { description, path } = hit;
+  const { path, date } = hit;
   return (
-    <article>
-      <h2>
-        <a href={path}>
+    <div key={path}>
+      <h3>
+        <Link to={path}>
           <Highlight hit={hit} attribute="title" />
-        </a>
-      </h2>
-      <p>{description}</p>
-    </article>
+        </Link>
+      </h3>
+      <small>{new Date(date).toDateString()}</small>
+      <p>
+        <Highlight hit={hit} attribute="description" />
+      </p>
+    </div>
   );
 };
 
