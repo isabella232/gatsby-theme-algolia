@@ -2,10 +2,22 @@
 
 `gatsby-theme-algolia` helps you add Algolia search into your Gatsby project.
 
-It consists of two parts:
+It helps you in two ways:
 
-- 🚀  Pushing your data to Algolia server
-- 🌷  UI components to list your data with a search box
+1. Push your data to Algolia server
+2. List your data with a search box
+
+`gatsby-theme-algolia` is a wrapper of [`gatsby-plugin-algolia`](https://github.com/algolia/gatsby-plugin-algolia) and [`react-instantsearch`](https://github.com/algolia/react-instantsearch). If you are already familiar with them, it is recommended that you use them directly.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [1. Push your data to Algolia server](#push-your-data-to-algolia-server)
+  - [2. List your data with a search box](#list-your-data-with-a-search-box)
+- [Customization](#customization)
+  - [1. Specify what to index](#specify-what-to-index)
+  - [2. Alter the UI](#alter-the-ui)
+- [Contribution](#contribution)
 
 ## Installation
 
@@ -17,11 +29,11 @@ npm install gatsby-theme-algolia --save-dev
 yarn add gatsby-theme-algolia -D
 ```
 
-## Guide
+## Getting Started
 
 > This guide assumes you already have an account at [algolia](https://www.algolia.com) and have created an index.
 
-### 🚀  Push your data to Algolia server
+### Push your data to Algolia server
 
 #### gatsby-config.js
 
@@ -56,7 +68,11 @@ GATSBY_ALGOLIA_SEARCH_API_KEY=xxx
 GATSBY_ALGOLIA_INDEX_NAME=xxx
 ```
 
-Since `GATSBY_ALGOLIA_ADMIN_API_KEY` is a secret information, you don't want to expose it to public. Add `.env` to your `.gitingore` to avoid commiting it.
+Since `GATSBY_ALGOLIA_ADMIN_API_KEY` is a secret information, you don't want to expose it to public. Run the following to avoid commiting the credentials.
+
+```bash
+echo '.env' >> .gitignore
+```
 
 #### Push it
 
@@ -72,7 +88,7 @@ yarn build
 
 Check the dashboard if the data is well stored. At the dashboard, you need to go to `Configuration` and configure `Searchable attributes` properly.
 
-### 🌷  List your data with a search box
+### List your data with a search box
 
 Open your index page file(maybe `src/pages/index.js` or `src/components/index.js`).
 
