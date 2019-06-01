@@ -14,7 +14,7 @@
     "release": "standard-version",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "yarn lint"
   },
   "repository": {
     "type": "git",
