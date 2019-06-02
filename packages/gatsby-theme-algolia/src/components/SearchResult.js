@@ -21,6 +21,6 @@ const defaultHitComponent = ({ hit }) => {
   );
 };
 
-export default ({ hitComponent = defaultHitComponent, ...args }) => (
-  <Hits hitComponent={hitComponent} {...args} />
+export default ({ hitComponent = defaultHitComponent, ...otherProps }) => (
+  <Hits hitComponent={hitComponent} {...otherProps} />
 );

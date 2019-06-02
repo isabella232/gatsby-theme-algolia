@@ -2,23 +2,27 @@ import React from 'react';
 import SearchWrapper from '../SearchWrapper';
 import SearchResult from '../SearchResult';
 import {
-  render,
+  render as originalRender,
   fireEvent,
   cleanup,
   waitForElement,
 } from '@testing-library/react';
 
-describe('Rendering', () => {
-  it('renders without arguments', () => {
-    const { container } = render(
-      <SearchWrapper
-        algoliaAppId="a"
-        algoliaSearchApiKey="b"
-        algoliaIndexName="c"
-      >
-        <SearchResult />
-      </SearchWrapper>
-    );
-    expect(container).toMatchSnapshot();
+const render = ({ children }) => {
+  return originalRender(
+    <SearchWrapper
+      algoliaAppId="a"
+      algoliaSearchApiKey="b"
+      algoliaIndexName="c"
+    >
+      {children}
+    </SearchWrapper>
+  );
+};
+
+describe('SearchResult', () => {
+  it('renders Hits with hitComponent', () => {
+    const hitComponent = () => <p />;
+    render(<SearchResult hitComponent={hitComponent} />);
   });
 });
