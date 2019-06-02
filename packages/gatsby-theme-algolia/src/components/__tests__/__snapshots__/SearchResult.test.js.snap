@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering renders without arguments 1`] = `
+<div>
+  <div
+    class="ais-InstantSearch__root"
+  >
+    <div
+      class="ais-Hits"
+    >
+      <ul
+        class="ais-Hits-list"
+      />
+    </div>
+  </div>
+</div>
+`;

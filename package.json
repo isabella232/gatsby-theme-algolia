@@ -12,7 +12,8 @@
     "dev:blog": "yarn workspace blog develop",
     "commit": "git-cz",
     "release": "standard-version",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "yarn workspace gatsby-theme-algolia test",
+    "test:watch": "yarn workspace gatsby-theme-algolia test:watch"
   },
   "repository": {
     "type": "git",
